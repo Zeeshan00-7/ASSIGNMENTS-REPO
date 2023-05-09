@@ -1,0 +1,21 @@
+.btn{
+    background-color: rgb(75, 151, 223);
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: black;
+}
+
+.main-button{
+    color: rgb(0, 0, 0);
+    width: 150px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+}

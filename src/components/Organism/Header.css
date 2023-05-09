@@ -1,0 +1,39 @@
+
+.main{
+    background-color: rgb(150, 142, 142);
+    margin-top: 10rem;
+    gap: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.image{
+    height: 20rem;
+    width: 20rem;
+}
+
+.text{
+    color: white;
+}
+
+@media only screen and (max-width: 768px){
+    .main{
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .text{
+        color: white;
+        margin-top: 35px;
+    }
+    
+    .image{
+        height: 25rem;
+        width: 25rem;
+        margin-bottom: 155px;
+    }
+    
+}
