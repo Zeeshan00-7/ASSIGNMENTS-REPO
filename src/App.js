@@ -1,10 +1,12 @@
-import './App.css';
-import TodoApp from './components/organisms/TodoApp/TodoApp';
+import React from 'react';
+import UserList from './Component/UserDetails'
 
 function App() {
   return (
     <div className="App">
-<TodoApp/>    </div>
+      {/* <NameInput /> */}
+      <UserList/>
+    </div>
   );
 }
 
