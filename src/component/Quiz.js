@@ -1,64 +1,61 @@
 import React, { useState, useEffect } from 'react';
-
-
-
-
+import styles from './Quiz.module.css';
 const questionsData = [
 
-  {
-    Question: 'Who is the PM of India',
-    Options: ['Salman khan', 'shahrukh Khan', 'Rahul Gandhi', 'Narendra Damodar Das Modi'],
-    CorrectAnswer: 'Narendra Damodar Das Modi',
-  },
-  {
-    Question: ' Which animal is known as the Ship of the Desert',
-    Options: ['Horse', 'Cow', 'Camel', 'Ox'],
-    CorrectAnswer: 'Camel',
-  },
-  {
-    Question: 'How many days are there in a week',
-    Options: ['1', '10', '7', '70'],
-    CorrectAnswer: '7',
-  },
-  {
-    Question: 'How many hours are there in a day',
-    Options: ['24', '90', '10', '21'],
-    CorrectAnswer: '24',
-  },
-  {
-    Question: ' How many letters are there in the English alphabet',
-    Options: ['26', '22', '27', '20'],
-    CorrectAnswer: '26',
-  },
-
-  {
-    Question: 'Who is the PM of India',
-    Options: ['Salman khan', 'shahrukh Khan', 'Rahul Gandhi', 'Narendra Damodar Das Modi'],
-    CorrectAnswer: 'Narendra Damodar Das Modi',
-  },
-  {
-    Question: ' Which animal is known as the Ship of the Desert',
-    Options: ['Horse', 'Cow', 'Camel', 'Ox'],
-    CorrectAnswer: 'Camel',
-  },
-  {
-    Question: 'How many days are there in a week',
-    Options: ['1', '10', '7', '70'],
-    CorrectAnswer: '7',
-  },
-  {
-    Question: 'How many hours are there in a day',
-    Options: ['24', '90', '10', '21'],
-    CorrectAnswer: '24',
-  },
-  {
-    Question: ' How many letters are there in the English alphabet',
-    Options: ['26', '22', '27', '20'],
-    CorrectAnswer: '26',
-  },
- 
-//   {/* // Add more questions here */}
-];
+    {
+      Question: 'Who is the PM of India',
+      Options: ['Salman khan', 'shahrukh Khan', 'Rahul Gandhi', 'Narendra Damodar Das Modi'],
+      CorrectAnswer: 'Narendra Damodar Das Modi',
+    },
+    {
+      Question: ' Which animal is known as the Ship of the Desert',
+      Options: ['Horse', 'Cow', 'Camel', 'Ox'],
+      CorrectAnswer: 'Camel',
+    },
+    {
+      Question: 'How many days are there in a week',
+      Options: ['1', '10', '7', '70'],
+      CorrectAnswer: '7',
+    },
+    {
+      Question: 'How many hours are there in a day',
+      Options: ['24', '90', '10', '21'],
+      CorrectAnswer: '24',
+    },
+    {
+      Question: ' How many letters are there in the English alphabet',
+      Options: ['26', '22', '27', '20'],
+      CorrectAnswer: '26',
+    },
+  
+    {
+      Question: 'Who is the PM of India',
+      Options: ['Salman khan', 'shahrukh Khan', 'Rahul Gandhi', 'Narendra Damodar Das Modi'],
+      CorrectAnswer: 'Narendra Damodar Das Modi',
+    },
+    {
+      Question: ' Which animal is known as the Ship of the Desert',
+      Options: ['Horse', 'Cow', 'Camel', 'Ox'],
+      CorrectAnswer: 'Camel',
+    },
+    {
+      Question: 'How many days are there in a week',
+      Options: ['1', '10', '7', '70'],
+      CorrectAnswer: '7',
+    },
+    {
+      Question: 'How many hours are there in a day',
+      Options: ['24', '90', '10', '21'],
+      CorrectAnswer: '24',
+    },
+    {
+      Question: ' How many letters are there in the English alphabet',
+      Options: ['26', '22', '27', '20'],
+      CorrectAnswer: '26',
+    },
+   
+  //   {/* // Add more questions here */}
+  ];
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -110,6 +107,13 @@ const Quiz = () => {
 
     setIsSubmitted(true);
   };
+  
+  const formatTime = (timeInSeconds) => {
+    const minutes = Math.floor(timeInSeconds / 60);
+    const seconds = timeInSeconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
 
   const handleRestartTest = () => {
     setCurrentQuestion(0);
@@ -132,13 +136,13 @@ const Quiz = () => {
   const renderQuestion = () => {
     if (isSubmitted) {
       return (
-        <div>
-          <h2>Test Result</h2>
-          <p>Your score: {score} out of {questionsData.length * 2}</p>
+        <div className={styles.resultContainer}>
+          <h2 className={styles.title}>Test Result</h2>
+          <p className={styles.resultScore}>Your score: {score} out of {questionsData.length * 2}</p>
           {isPassed ? (
-            <p>Congratulations! You passed the test!</p>
+            <p className={`${styles.resultScore} ${styles.passed}`}>Congratulations! You passed the test!</p>
           ) : (
-            <button onClick={handleRestartTest}>Restart Test</button>
+            <button className={`${styles.restartBtn} ${styles.resultScore}`} onClick={handleRestartTest}>Restart Test</button>
           )}
         </div>
       );
@@ -148,11 +152,11 @@ const Quiz = () => {
 
     return (
       <div>
-        <h2>Question {currentQuestion + 1}</h2>
-        <p>{question.Question}</p>
-        <div>
+        <h2 className={styles.title}>Question {currentQuestion + 1}</h2>
+        <p className={styles.question}>{question.Question}</p>
+        <div className={styles.options}>
           {question.Options.map((option, index) => (
-            <div key={index}>
+            <div className={styles.option} key={index}>
               <input
                 type="radio"
                 id={`option${index}`}
@@ -165,31 +169,25 @@ const Quiz = () => {
             </div>
           ))}
         </div>
-        <button onClick={currentQuestion === questionsData.length - 1 ? handleSubmitTest : handleNextQuestion}>
+        <button className={styles.submitBtn} onClick={currentQuestion === questionsData.length - 1 ? handleSubmitTest : handleNextQuestion}>
           {currentQuestion === questionsData.length - 1 ? 'Submit' : 'Next'}
         </button>
       </div>
     );
   };
 
-  const formatTime = (timeInSeconds) => {
-    const minutes = Math.floor(timeInSeconds / 60);
-    const seconds = timeInSeconds % 60;
-    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-  };
-
   return (
-    <div>
-      <h1>Test</h1>
+    <div className={styles.quizContainer}>
+      <h1 className={styles.title}>Test</h1>
       {!isStarted ? (
-        <button onClick={handleStartQuiz}>Start Quiz</button>
+        <button className={styles.submitBtn} onClick={handleStartQuiz}>Start Quiz</button>
       ) : (
         <div>
           {renderQuestion()}
-          <p>Time remaining: {formatTime(time)}</p>
+          <p className={styles.timeRemaining}>Time remaining: {formatTime(time)}</p>
           {time === 0 && !isSubmitted && (
             <div>
-              <p>Time's up! Test submitted automatically.</p>
+              <p className={styles.timesUp}>Time's up! Test submitted automatically.</p>
               {renderQuestion()}
             </div>
           )}
@@ -198,4 +196,5 @@ const Quiz = () => {
     </div>
   );
 };
+
 export default Quiz;
