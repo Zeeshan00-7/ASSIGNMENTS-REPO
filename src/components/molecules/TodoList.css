@@ -1,0 +1,88 @@
+/* .todo-container {
+    position: relative;
+  }
+  
+  .todo-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .todo-item {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  } 
+
+  .todo-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+  }
+
+
+
+  
+  .delete-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .del {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .del .cross {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    color: red;
+  }
+  
+  .del:hover .cross {
+    transform: rotate(45deg);
+  }
+  
+  .del .cross:before,
+  .del .cross:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 2px;
+    background-color: red;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .del .cross:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  .del .cross:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }*/
+/* 
+  .todo-container delete-buttons{
+    display: flex;
+
+
+  }
+   */
+   /* li.todo-item{
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+   } */
+  

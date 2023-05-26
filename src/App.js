@@ -7,11 +7,13 @@ function App() {
   return (
     <div className="container">
     <Provider store={store}>
-      
         
         <div className='content'>
-
-        ADD TODO's ~~~
+          <span>::</span>
+        <span> TO-</span>
+        <span>DO-</span>
+        <span> LIST</span>
+      
 
         </div>
 

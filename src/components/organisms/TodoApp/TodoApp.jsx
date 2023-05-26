@@ -21,21 +21,27 @@ function TodoApp({ todos, addTodo, deleteTodo }) {
   };
 
   return (
-    
-      <div className='wrapper'>
-        <div className='add'>
-        <Input
+    <div className=''>
+    <h1 className='heading'>
+      <span>ADD</span> <span> - </span> <span>TODO's</span>
+    </h1>
+  
+    <div className='add'>
+      <Input
         value={inputValue}
         onChange={(event) => setInputValue(event.target.value)}
         placeholder="What TO DO?"
+        className="input-field"
       />
-      <Button  onClick={handleAddTodo}>ADD TODO</Button>
-        </div>
-     
-      <div className='LIST'>
+      <Button onClick={handleAddTodo} className="abutton">
+        ADD TODO
+      </Button>
+    </div>
+  
+    <div className='LIST'>
       <TodoList todos={todos} onDelete={handleDeleteTodo} />
-      </div>
-      </div>
+    </div>
+  </div>
   );
 }
 /**The mapStateToProps function is defined to specify how the Redux state should be mapped to the component's props. 
