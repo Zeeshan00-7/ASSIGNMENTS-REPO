@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+body {
+  margin: 0; /* Add this line to remove the default margin */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  background-color: #ddff00;
+  height: 100vh;
+}
+.content{
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px; /* Adjust the font size as needed */
+  color: #144201; /* Adjust the color as desired */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust the shadow properties as desired */
+  margin-top: 5%; 
+ }
+ 
+.todoapp {
+  background-color: rgb(198, 231, 165);
+  border: solid rgb(2, 110, 36);
+  border-radius: 2%;
+  border-style: double;
+  border-width: 10px;
+  height: 65vh;
+  width: 30vw;
+  padding: 1%;
+  max-height: 100vh;
+  max-width: 30vw;
+  
+} 
+
+
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 65vh;
 }
 
-.App-link {
-  color: #61dafb;
+.add {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add Input {
+  padding: 10px;
+  border-style: none;
+  border-radius: none;
+  border-color:rgb(0, 0, 0);
+  background-color: rgb(134, 197, 134);
+  margin-right: 10px;
+  width: 23vw;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-style: italic;
+  
 }
+
+.add Button {
+  padding: 10px 20px;
+  background-color: #51c154;
+  justify-content: space-between;
+  color: black;
+  border-color: #2c712fd2;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add Button:hover {
+  background-color: #b2ffd8aa;
+}
+
+/* css for todo and delete button */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  background-color: #029006;
+  margin-bottom: 10px;
+}
+
+.todo-content {
+  overflow: scroll;
+  scroll-margin: auto;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 300;
+  max-width: 300px; /* Adjust the value as needed */
+}
+
+li Button {
+  background-color: #ff0000;
+  color: #000000;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+li Button:hover {
+  background-color: #d0f0a9c9;
+}
+

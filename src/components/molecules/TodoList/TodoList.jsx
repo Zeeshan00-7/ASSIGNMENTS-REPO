@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Button from '../../atoms/Button/Button';
 
 function TodoList({ todos, onDelete }) {
   const handleDelete = (index) => {
@@ -9,12 +11,16 @@ function TodoList({ todos, onDelete }) {
     <ul>
       {todos.map((todo, index) => (
         <li key={index}>
-          {todo}
-          <button onClick={() => handleDelete(index)}>Delete</button>
+            <div className="todo-content">{todo}</div>
+           <Button onClick={() => handleDelete(index)}>Delete</Button>
         </li>
       ))}
     </ul>
   );
 }
 
-export default TodoList;
+const mapStateToProps = (state) => ({
+  todos: state.todos,
+});
+
+export default connect(mapStateToProps)(TodoList);
