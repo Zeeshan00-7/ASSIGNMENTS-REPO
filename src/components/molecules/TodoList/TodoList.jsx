@@ -13,8 +13,8 @@ function TodoList({ todos, onDelete }) {
       {todos.map((todo, index) => (
         <li key={index} className="todo-item">
           <div className="todo-content">{todo}</div>
-          <Button className="del" onClick={() => handleDelete(index)}>
-            <span className="cross">X</span>
+          <Button onClick={() => handleDelete(index)}>
+            <span >X</span>
           </Button>
         </li>
       ))}

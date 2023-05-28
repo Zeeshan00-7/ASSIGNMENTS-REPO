@@ -1,32 +1,51 @@
-.content {
+/* .content {
   font-family: Arial, sans-serif;
-  font-size: 40px;
-  /* text-align: center; */
   text-transform: uppercase;
-  letter-spacing: 2px;
-  /* padding: 20px; */
-  /* background-image: linear-gradient(45deg, #006affec, #08454f); */
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+letter-spacing: 2px;
   text-align: center;
-  font-weight: 500px;
-  font-size: 80px;
+  
   font-size: xx-large;
   margin-bottom: 4%;
   margin-left: 35%;
-  color: rgba(95, 210, 234, 0.813);
   padding: 20px;
-border-radius: 8px;
-box-shadow: 0 4px 8px rgba(0, 46, 154, 0.1);
-color: rgb(0, 0, 0);
+  color:  black;
   -webkit-text-stroke: 2px rgb(0, 76, 255);
-  /* text-stroke: 2px rgb(255, 0, 0); */
 
-}
-/* .content {
-  
 } */
+
+
+.content {
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: xx-large;
+  margin-bottom: 4%;
+  margin-left: 35%;
+  padding: 20px;
+  color: black;
+  -webkit-text-stroke: 2px rgb(0, 76, 255);
+  position: relative;
+  overflow: hidden;
+}
+
+.content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-30deg);
+  animation: lightingEffect 2s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes lightingEffect {
+   10% { transform: translateX(-20%); }
+  100% { transform: translateX(100%); }
+}
 
 
 .container{
@@ -44,31 +63,9 @@ color: rgb(0, 0, 0);
   background-color: rgba(0, 76, 255, 0.733) ;
   max-height: 400px;
   overflow: auto;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+ 
 }
-/* .add input{
-  color: aqua;
-} */
-/* .add{
-  /* display: flex;
-  align-items: center; 
-  justify-content: space-evenly;
-} 
 
-
-ul.todo-list{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-li.todo-list{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}*/
 
 .heading {
   text-align: center;
@@ -77,39 +74,27 @@ li.todo-list{
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 46, 154, 0.1);
+  box-shadow: 0 4px 8px rgba(1, 23, 75, 0.1);
 color: rgb(0, 0, 0);
-  -webkit-text-stroke: 2px rgb(0, 76, 255);
+  -webkit-text-stroke: 2px rgb(37, 88, 208);
 }
 
-.wrapper h1{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/* 
-.todo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
 .todo-container { margin: auto;
 
- color: black;
  background-color: rgba(0, 157, 255, 0.813);
  padding: 10px;
  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
  opacity: 80%;
+ border-radius: 6%;
  margin: auto;
- max-width: 400px; /* Adjust the maximum width as needed */
+ max-width: 550px; /* Adjust the maximum width as needed */
  height: 300px; /* Adjust the height as needed */
- overflow: auto;
+ overflow: scroll;
 }
 
 
 
 .todoapp{
-  /* background-color: black; */
   border-radius: 20%;
   background-image: url(https://static.vecteezy.com/system/resources/previews/002/909/222/original/abstract-high-tech-background-virtual-reality-technology-innovation-head-up-display-interface-futuristic-sci-fi-glowing-hud-circle-digital-infographic-business-vector.jpg);
   background-blend-mode: darken;
@@ -117,12 +102,6 @@ color: rgb(0, 0, 0);
   width: 50%;
 }
 
-/* 
-.todo-list {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-} */
 
 
 .todo-list {
@@ -131,13 +110,6 @@ color: rgb(0, 0, 0);
   font-weight: bolder;
 }
 
-/* 
-.todo-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-} */
 .todo-item {
   display: flex;
   align-items: center;
@@ -146,152 +118,59 @@ color: rgb(0, 0, 0);
 }
 
 
-/* .todo-content {
-  margin-right: 10px;
-} */
-
 .todo-content {
   flex: 1;
   word-break: break-all;
 }
-
-
-.cross {
-  font-weight: bold;
-  color: black;;
-}
-
-/*
-.add {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
- 
-.add-button {
-  padding: 8px 16px;
-  background-color: #40bafc;
+.input {
+  width: 200px;
+  padding: 12px;
+  font-size: 18px;
   border: none;
-  cursor: pointer;
-} 
-.input-field {
-  width: 100%;
-color: #40bafc;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   outline: none;
-}*/
-
-
-/* 
-
-.abutton {
-  position: relative;
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #81fff0;
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  overflow: hidden;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: rgba(15, 133, 229, 0.712);
+  color: #000000; /* Set text color to white */
+  transition: background-color 0.3s; /* Add a smooth transition effect */
 }
 
-.abutton:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: #ffcc80;
-  transform: skewX(-45deg);
-  transition: left 0.3s ease;
+.input:focus {
+  background-color: rgba(15, 133, 229, 1); /* Change background color when focused */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a stronger box shadow when focused */
 }
 
-.abutton:hover {
-  background-color: #ff8900;
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.8); /* Set placeholder text color */
 }
 
-.abutton:hover:before {
-  left: 0;
-} */
-    /* NEW CSS 
-    
-    
-    
-    .input-field {
-      width: 300px;
-      padding: 12px;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      outline: none;
-    }
-    
-    .abutton {
-      padding: 12px 24px;
-      font-size: 16px;
-       Rest of the button styles 
-    }
-    
+.input:hover {
+  background-color: #61effc;
+}
 
-    .heading {
-      font-family: 'Arial', sans-serif;
-      font-size: 32px;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }*/   
+
+  
     .add {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
       margin-bottom: 20px;
+      gap: 10px;
     }
 
-    .abutton {
-      padding: 12px 24px;
-      background-color: #ff4f00;
-      color: #fff;
-      border: none;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    
-    .abutton:hover {
-      background-color: #050505;
-    }
-    
-    .delete-button {
+    .button {
       padding: 8px 16px;
-      background-color: #1a5366c8;
-      color: #fff;
-      border: none;
+      background-color: #054d88c8;
+      color: #000000;
       border-radius: 4px;
+      border-style: hidden;
       font-size: 14px;
       font-weight: bold;
       text-transform: uppercase;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
     
-    .delete-button:hover {
+    .button:hover {
       background-color: #61effc;
     }
      

@@ -30,10 +30,8 @@ function TodoApp({ todos, addTodo, deleteTodo }) {
       <Input
         value={inputValue}
         onChange={(event) => setInputValue(event.target.value)}
-        placeholder="What TO DO?"
-        className="input-field"
       />
-      <Button onClick={handleAddTodo} className="abutton">
+      <Button onClick={handleAddTodo} >
         ADD TODO
       </Button>
     </div>
